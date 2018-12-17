@@ -13,10 +13,10 @@ export class UserService {
 
   constructor(private http: HttpClient) {}
 
-  private userUrl = 'http://localhost:8080/';
+  private userUrl = 'https://reqres.in';
 
   public getUsers(): Observable<User[]> {
-    return this.http.get<User[]>(this.userUrl + '/users');
+    return this.http.get<User[]>(this.userUrl + '/api/users');
   }
 
 }

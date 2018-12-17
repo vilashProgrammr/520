@@ -10,14 +10,14 @@ import {Router} from '@angular/router';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
-  displayedColumns = ['id', 'username', 'salary', 'age'];
+  displayedColumns = ['id', 'first_name', 'last_name', 'avatar'];
   dataSource = new MatTableDataSource<User>();
   constructor(private router: Router, private userService: UserService) {
   }
   ngOnInit(): void {
     this.userService.getUsers().subscribe(
       data => {
-        this.dataSource.data = data;
+        this.dataSource.data = data['data'];
       }
     );
   }
